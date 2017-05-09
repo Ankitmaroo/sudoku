@@ -3,12 +3,13 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+Constraint propagation is the idea of applying a constraint as many times as possible until a solution is obtained, or the constraint can no longer be applied to refine the solution.
+
+Naked twins is the strategy we apply to reduce the number of possible solution per box. The strategy is to identify a pair of boxes belonging to the same set of peers that have the same 2 numbers as possibilities, and eleminate these two numbers from all the boxes that have these two boxes as peers. First we identify all boxes that have only 2 elements. Next we identify which boxes among these have the same elements to get naked twins. Once we get the naked twins, we remove the corresponding digits from all the boxes that are peers to both the twins.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
-
+If we think of the diagonals as additional units to the game, changing a value in one of the boxes in the diagonals will immediately propagate constraints into the box's three other units (row, column, square). Once this is done, all the diagonal entries will have the corresponding diagonal entries as their peers. This will result in not accepting solutions that do not satisfy the diagonal constraint.
 ### Install
 
 This project requires **Python 3**.
